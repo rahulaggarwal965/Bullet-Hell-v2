@@ -16,6 +16,8 @@
 		3F1F346C1D2D875B0042AF8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F346A1D2D875B0042AF8F /* LaunchScreen.storyboard */; };
 		3F1F34771D2D875B0042AF8F /* Bullet_Hell_v2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F34761D2D875B0042AF8F /* Bullet_Hell_v2Tests.swift */; };
 		3F1F34821D2D875B0042AF8F /* Bullet_Hell_v2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F34811D2D875B0042AF8F /* Bullet_Hell_v2UITests.swift */; };
+		3F1F34961D2DC74C0042AF8F /* playerImagesv1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F34951D2DC74C0042AF8F /* playerImagesv1.atlas */; };
+		3F1F349A1D2DCAFA0042AF8F /* enemyT1Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F34991D2DCAFA0042AF8F /* enemyT1Images.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		3F1F347D1D2D875B0042AF8F /* Bullet Hell v2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bullet Hell v2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F1F34811D2D875B0042AF8F /* Bullet_Hell_v2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bullet_Hell_v2UITests.swift; sourceTree = "<group>"; };
 		3F1F34831D2D875B0042AF8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F1F34951D2DC74C0042AF8F /* playerImagesv1.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = playerImagesv1.atlas; sourceTree = "<group>"; };
+		3F1F34991D2DCAFA0042AF8F /* enemyT1Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = enemyT1Images.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				3F1F34681D2D875B0042AF8F /* Assets.xcassets */,
 				3F1F346A1D2D875B0042AF8F /* LaunchScreen.storyboard */,
 				3F1F346D1D2D875B0042AF8F /* Info.plist */,
+				3F1F34991D2DCAFA0042AF8F /* enemyT1Images.atlas */,
+				3F1F34951D2DC74C0042AF8F /* playerImagesv1.atlas */,
 			);
 			path = "Bullet Hell v2";
 			sourceTree = "<group>";
@@ -236,9 +242,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F1F34601D2D875B0042AF8F /* GameScene.sks in Resources */,
+				3F1F349A1D2DCAFA0042AF8F /* enemyT1Images.atlas in Resources */,
 				3F1F346C1D2D875B0042AF8F /* LaunchScreen.storyboard in Resources */,
 				3F1F34691D2D875B0042AF8F /* Assets.xcassets in Resources */,
 				3F1F34671D2D875B0042AF8F /* Main.storyboard in Resources */,
+				3F1F34961D2DC74C0042AF8F /* playerImagesv1.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +502,7 @@
 				3F1F34881D2D875B0042AF8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3F1F34891D2D875B0042AF8F /* Build configuration list for PBXNativeTarget "Bullet Hell v2Tests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +511,7 @@
 				3F1F348B1D2D875B0042AF8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3F1F348C1D2D875B0042AF8F /* Build configuration list for PBXNativeTarget "Bullet Hell v2UITests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +520,7 @@
 				3F1F348E1D2D875B0042AF8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
