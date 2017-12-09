@@ -18,6 +18,7 @@
 		3F1F34821D2D875B0042AF8F /* Bullet_Hell_v2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F34811D2D875B0042AF8F /* Bullet_Hell_v2UITests.swift */; };
 		3F1F34961D2DC74C0042AF8F /* playerImagesv1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F34951D2DC74C0042AF8F /* playerImagesv1.atlas */; };
 		3F1F349A1D2DCAFA0042AF8F /* enemyT1Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F34991D2DCAFA0042AF8F /* enemyT1Images.atlas */; };
+		47AEF31B1D2F4689005E0280 /* enemyT2Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 47AEF31A1D2F4689005E0280 /* enemyT2Images.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		3F1F34831D2D875B0042AF8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F1F34951D2DC74C0042AF8F /* playerImagesv1.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = playerImagesv1.atlas; sourceTree = "<group>"; };
 		3F1F34991D2DCAFA0042AF8F /* enemyT1Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = enemyT1Images.atlas; sourceTree = "<group>"; };
+		47AEF31A1D2F4689005E0280 /* enemyT2Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = enemyT2Images.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				3F1F34681D2D875B0042AF8F /* Assets.xcassets */,
 				3F1F346A1D2D875B0042AF8F /* LaunchScreen.storyboard */,
 				3F1F346D1D2D875B0042AF8F /* Info.plist */,
+				47AEF31A1D2F4689005E0280 /* enemyT2Images.atlas */,
 				3F1F34991D2DCAFA0042AF8F /* enemyT1Images.atlas */,
 				3F1F34951D2DC74C0042AF8F /* playerImagesv1.atlas */,
 			);
@@ -205,6 +208,7 @@
 				TargetAttributes = {
 					3F1F34591D2D875B0042AF8F = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = SUPYGAPUR8;
 					};
 					3F1F34711D2D875B0042AF8F = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -247,6 +251,7 @@
 				3F1F34691D2D875B0042AF8F /* Assets.xcassets in Resources */,
 				3F1F34671D2D875B0042AF8F /* Main.storyboard in Resources */,
 				3F1F34961D2DC74C0042AF8F /* playerImagesv1.atlas in Resources */,
+				47AEF31B1D2F4689005E0280 /* enemyT2Images.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,10 +422,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Bullet Hell v2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rahul.Bullet-Hell-v2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -428,10 +436,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Bullet Hell v2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rahul.Bullet-Hell-v2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
