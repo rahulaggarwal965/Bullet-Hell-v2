@@ -45,7 +45,7 @@ struct physicsCategory {
 }
 
 //Math
-let Pi = CGFloat(M_PI);
+let Pi = CGFloat.pi;
 let Deg2Rad = Pi / 180;
 let Rad2Deg = 180 / Pi;
 
@@ -56,7 +56,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var enemyT2Sprites: [SKSpriteNode] = [];
     
     //Tracking Bullets and Bullet Attributes
-    //var intialEnemyT2BulletSpeed : CGFloat = 20;
     var enemyT2BulletCooldown : [CFTimeInterval] = [];
     var enemyT2BulletSpeed : [CGFloat] = [];
     var enemyT2BulletEase : CGFloat = 5;
@@ -283,7 +282,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     //Spawning Player Bullets
-    func spawnPlayerBullets(){
+    @objc func spawnPlayerBullets(){
         
         if (playerHP > 0){
             
@@ -339,7 +338,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     //Spawning Enemy - Type One
-    func spawnEnemyT1(_ timer: Timer){
+    @objc func spawnEnemyT1(_ timer: Timer){
         
         //Enemy - Type One Animation
         let enemyT1AnimatedAtlas = SKTextureAtlas(named: "enemyT1Images")
@@ -388,7 +387,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     //Spawning Enemy - Type Two
-    func spawnEnemyT2(){
+    @objc func spawnEnemyT2(){
         
         //Enemy - Type Two Animation
         let enemyT2AnimatedAtlas = SKTextureAtlas(named: "enemyT2Images");
