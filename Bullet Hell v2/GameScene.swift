@@ -7,7 +7,6 @@
 //
 
 import SpriteKit
-import Foundation
 
 //Player and Enemy Animations
 var player  : SKSpriteNode!;
