@@ -151,8 +151,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         stars2_2.alpha = 0.12;
         addChild(stars2_2);
         
-        //User Info
-        //let positionInfo : NSDictionary = ["xStart": CGFloat(arc4random_uniform(UInt32(self.size.width - enemyT1.size.width) - UInt32(enemyT1.size.width)) + UInt32(enemyT1.size.width)), "yStart": CGFloat(self.size.height)]
+        //Animation and Position Info
+        
+        //Enemy - Type One
+        
+
+        //let enemyT1PositionInfo : NSDictionary = ["xStart": CGFloat(arc4random_uniform(UInt32(self.size.width - enemyT1.size.width) - UInt32(enemyT1.size.width)) + UInt32(enemyT1.size.width)), "yStart": CGFloat(self.size.height)]
         
         //Spawners and Timers
         let playerBulletTimer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(spawnPlayerBullets), userInfo: nil, repeats: true);
@@ -340,7 +344,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //Spawning Enemy - Type One
     @objc func spawnEnemyT1(_ timer: Timer){
         
-        //Enemy - Type One Animation
         let enemyT1AnimatedAtlas = SKTextureAtlas(named: "enemyT1Images")
         var enemyT1FlyFrames = [SKTexture]();
         let enemyT1NumImages = enemyT1AnimatedAtlas.textureNames.count;
