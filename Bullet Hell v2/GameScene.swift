@@ -31,7 +31,7 @@ var t2HealthBar : SKSpriteNode!;
 struct physicsCategory {
     
     //Enemies
-    static let enemyT1 : UInt32 = 1;
+    static let soldier : UInt32 = 1;
     static let enemyT2 : UInt32 = 2;
     
     //Bullets
@@ -180,7 +180,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.physicsBody = SKPhysicsBody(rectangleOf: player.size);
         player.physicsBody?.affectedByGravity = false;
         player.physicsBody?.categoryBitMask = physicsCategory.player;
-        player.physicsBody?.contactTestBitMask = physicsCategory.enemyT1 | physicsCategory.enemyT2;
+        player.physicsBody?.contactTestBitMask = physicsCategory.soldier | physicsCategory.enemyT2;
         player.physicsBody?.collisionBitMask = 0;
         player.physicsBody?.isDynamic = false;
         self.addChild(player);
@@ -205,9 +205,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         //Enemy - Type One Collision with Player Bullet
-        if ((firstBody.categoryBitMask == physicsCategory.enemyT1) && (secondBody.categoryBitMask == physicsCategory.playerBullet)) {
+        if ((firstBody.categoryBitMask == physicsCategory.soldier) && (secondBody.categoryBitMask == physicsCategory.playerBullet)) {
         enemyT1CollisionWithPlayerBullet(firstBody.node as! SKSpriteNode, secondBody.node as! SKSpriteNode);
-        } else if ((firstBody.categoryBitMask == physicsCategory.playerBullet) && (secondBody.categoryBitMask == physicsCategory.enemyT1)){
+        } else if ((firstBody.categoryBitMask == physicsCategory.playerBullet) && (secondBody.categoryBitMask == physicsCategory.soldier)){
         enemyT1CollisionWithPlayerBullet(secondBody.node as! SKSpriteNode, firstBody.node as! SKSpriteNode);
         }
         
@@ -219,9 +219,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         //Enemy - Type One Collision with Player
-        if((firstBody.categoryBitMask == physicsCategory.enemyT1) && (secondBody.categoryBitMask == physicsCategory.player)) {
+        if((firstBody.categoryBitMask == physicsCategory.soldier) && (secondBody.categoryBitMask == physicsCategory.player)) {
             enemyT1CollisionWithPlayer(firstBody.node as! SKSpriteNode, secondBody.node as! SKSpriteNode);
-        } else if((firstBody.categoryBitMask == physicsCategory.player) && (secondBody.categoryBitMask == physicsCategory.enemyT1)){
+        } else if((firstBody.categoryBitMask == physicsCategory.player) && (secondBody.categoryBitMask == physicsCategory.soldier)){
             enemyT1CollisionWithPlayer(secondBody.node as! SKSpriteNode, firstBody.node as! SKSpriteNode);
         }
     }
@@ -300,7 +300,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             bullet.run(SKAction.sequence([action, actionDone]));
             bullet.physicsBody = SKPhysicsBody(rectangleOf: bullet.size);
             bullet.physicsBody?.categoryBitMask = physicsCategory.playerBullet;
-            bullet.physicsBody?.contactTestBitMask = physicsCategory.enemyT1 | physicsCategory.enemyT2;
+            bullet.physicsBody?.contactTestBitMask = physicsCategory.soldier | physicsCategory.enemyT2;
             bullet.physicsBody?.collisionBitMask = 0;
             bullet.physicsBody?.affectedByGravity = false;
             bullet.physicsBody?.isDynamic = false;
@@ -343,7 +343,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //Spawning Enemy - Type One
     @objc func spawnEnemyT1(_ timer: Timer){
         
-        let enemyT1AnimatedAtlas = SKTextureAtlas(named: "enemyT1Images")
+        let enemyT1AnimatedAtlas = SKTextureAtlas(named: "soldier")
         var enemyT1FlyFrames = [SKTexture]();
         let enemyT1NumImages = enemyT1AnimatedAtlas.textureNames.count;
         for i in 1 ... enemyT1NumImages {
@@ -362,7 +362,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //print(positionInfo["yStart"]);
         enemyT1.position = CGPoint(x: CGFloat(arc4random_uniform(UInt32(self.size.width - enemyT1.size.width) - UInt32(enemyT1.size.width)) + UInt32(enemyT1.size.width)), y: CGFloat(self.size.height));
         enemyT1.physicsBody = SKPhysicsBody(rectangleOf: enemyT1.size);
-        enemyT1.physicsBody?.categoryBitMask = physicsCategory.enemyT1;
+        enemyT1.physicsBody?.categoryBitMask = physicsCategory.soldier;
         enemyT1.physicsBody?.contactTestBitMask = physicsCategory.player | physicsCategory.playerBullet;
         enemyT1.physicsBody?.affectedByGravity = false;
         enemyT1.physicsBody?.collisionBitMask = 0;
@@ -392,7 +392,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     @objc func spawnEnemyT2(){
         
         //Enemy - Type Two Animation
-        let enemyT2AnimatedAtlas = SKTextureAtlas(named: "enemyT2Images");
+        let enemyT2AnimatedAtlas = SKTextureAtlas(named: "brute");
         var enemyT2FlyFrames = [SKTexture]();
         let enemyT2NumImages = enemyT2AnimatedAtlas.textureNames.count;
         for i in 1 ... enemyT2NumImages {
@@ -457,7 +457,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func updatePlayerHealthBar(_ node: SKSpriteNode, withHealthPoints hp: Int, withMaxHP maxHP: Int){
         let barSize = CGSize(width: playerHealthBarWidth, height: playerHealthBarHeight);
         let fillColor = UIColor(red: 113.0/255, green: 202.0/255, blue: 53.0/255, alpha:1);
-        let borderColor = UIColor(red: 35.0/255, green: 28.0/255, blue: 40.0/255, alpha:1);
+        let borderColor = UIColor(red: 35.0/255, green: 28.0/255, blue: 40.0/255, alpha:1)
         UIGraphicsBeginImageContextWithOptions(barSize, false, 0);
         let context = UIGraphicsGetCurrentContext();
         borderColor.setStroke();

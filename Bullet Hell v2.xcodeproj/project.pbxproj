@@ -17,8 +17,11 @@
 		3F1F34771D2D875B0042AF8F /* Bullet_Hell_v2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F34761D2D875B0042AF8F /* Bullet_Hell_v2Tests.swift */; };
 		3F1F34821D2D875B0042AF8F /* Bullet_Hell_v2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F34811D2D875B0042AF8F /* Bullet_Hell_v2UITests.swift */; };
 		3F1F34961D2DC74C0042AF8F /* playerImagesv1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F34951D2DC74C0042AF8F /* playerImagesv1.atlas */; };
-		3F1F349A1D2DCAFA0042AF8F /* enemyT1Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F34991D2DCAFA0042AF8F /* enemyT1Images.atlas */; };
-		47AEF31B1D2F4689005E0280 /* enemyT2Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 47AEF31A1D2F4689005E0280 /* enemyT2Images.atlas */; };
+		3F1F349A1D2DCAFA0042AF8F /* soldier.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F34991D2DCAFA0042AF8F /* soldier.atlas */; };
+		47AEF31B1D2F4689005E0280 /* brute.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 47AEF31A1D2F4689005E0280 /* brute.atlas */; };
+		7D561F251FDE34A900308F21 /* enemyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D561F241FDE34A900308F21 /* enemyClass.swift */; };
+		7D79D3C61FF1A3360090D65D /* healthBarClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D79D3C51FF1A3360090D65D /* healthBarClass.swift */; };
+		7D79D3C81FF6E5F70090D65D /* soldierEnemyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D79D3C71FF6E5F70090D65D /* soldierEnemyClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +58,11 @@
 		3F1F34811D2D875B0042AF8F /* Bullet_Hell_v2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bullet_Hell_v2UITests.swift; sourceTree = "<group>"; };
 		3F1F34831D2D875B0042AF8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F1F34951D2DC74C0042AF8F /* playerImagesv1.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = playerImagesv1.atlas; sourceTree = "<group>"; };
-		3F1F34991D2DCAFA0042AF8F /* enemyT1Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = enemyT1Images.atlas; sourceTree = "<group>"; };
-		47AEF31A1D2F4689005E0280 /* enemyT2Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = enemyT2Images.atlas; sourceTree = "<group>"; };
+		3F1F34991D2DCAFA0042AF8F /* soldier.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = soldier.atlas; sourceTree = "<group>"; };
+		47AEF31A1D2F4689005E0280 /* brute.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = brute.atlas; sourceTree = "<group>"; };
+		7D561F241FDE34A900308F21 /* enemyClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enemyClass.swift; sourceTree = "<group>"; };
+		7D79D3C51FF1A3360090D65D /* healthBarClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = healthBarClass.swift; sourceTree = "<group>"; };
+		7D79D3C71FF6E5F70090D65D /* soldierEnemyClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = soldierEnemyClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,15 +114,18 @@
 			isa = PBXGroup;
 			children = (
 				3F1F345D1D2D875B0042AF8F /* AppDelegate.swift */,
-				3F1F345F1D2D875B0042AF8F /* GameScene.sks */,
+				7D561F241FDE34A900308F21 /* enemyClass.swift */,
+				7D79D3C71FF6E5F70090D65D /* soldierEnemyClass.swift */,
+				7D79D3C51FF1A3360090D65D /* healthBarClass.swift */,
 				3F1F34611D2D875B0042AF8F /* GameScene.swift */,
+				3F1F345F1D2D875B0042AF8F /* GameScene.sks */,
 				3F1F34631D2D875B0042AF8F /* GameViewController.swift */,
 				3F1F34651D2D875B0042AF8F /* Main.storyboard */,
 				3F1F34681D2D875B0042AF8F /* Assets.xcassets */,
 				3F1F346A1D2D875B0042AF8F /* LaunchScreen.storyboard */,
 				3F1F346D1D2D875B0042AF8F /* Info.plist */,
-				47AEF31A1D2F4689005E0280 /* enemyT2Images.atlas */,
-				3F1F34991D2DCAFA0042AF8F /* enemyT1Images.atlas */,
+				47AEF31A1D2F4689005E0280 /* brute.atlas */,
+				3F1F34991D2DCAFA0042AF8F /* soldier.atlas */,
 				3F1F34951D2DC74C0042AF8F /* playerImagesv1.atlas */,
 			);
 			path = "Bullet Hell v2";
@@ -250,12 +259,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F1F34601D2D875B0042AF8F /* GameScene.sks in Resources */,
-				3F1F349A1D2DCAFA0042AF8F /* enemyT1Images.atlas in Resources */,
+				3F1F349A1D2DCAFA0042AF8F /* soldier.atlas in Resources */,
 				3F1F346C1D2D875B0042AF8F /* LaunchScreen.storyboard in Resources */,
 				3F1F34691D2D875B0042AF8F /* Assets.xcassets in Resources */,
 				3F1F34671D2D875B0042AF8F /* Main.storyboard in Resources */,
 				3F1F34961D2DC74C0042AF8F /* playerImagesv1.atlas in Resources */,
-				47AEF31B1D2F4689005E0280 /* enemyT2Images.atlas in Resources */,
+				47AEF31B1D2F4689005E0280 /* brute.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,8 +290,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F1F34621D2D875B0042AF8F /* GameScene.swift in Sources */,
+				7D79D3C61FF1A3360090D65D /* healthBarClass.swift in Sources */,
+				7D79D3C81FF6E5F70090D65D /* soldierEnemyClass.swift in Sources */,
 				3F1F34641D2D875B0042AF8F /* GameViewController.swift in Sources */,
 				3F1F345E1D2D875B0042AF8F /* AppDelegate.swift in Sources */,
+				7D561F251FDE34A900308F21 /* enemyClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
