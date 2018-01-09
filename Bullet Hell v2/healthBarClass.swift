@@ -2,14 +2,15 @@
 //  healthBarClass.swift
 //  Bullet Hell v2
 //
-//  Created by Rahul Aggarwal on 12/25/17.
-//  Copyright © 2017 DMA. All rights reserved.
+//  Created by Rahul Aggarwal on 1/8/18.
+//  Copyright © 2018 DMA. All rights reserved.
 //
 
+import Foundation
 import SpriteKit
 
 class HealthBar : SKSpriteNode {
-    
+
     init(healthBarWidth : Int, healthBarHeight : Int, hostile : Bool, health: Int, maxHealth : Int) {
         let barSize = CGSize(width: healthBarWidth, height: healthBarHeight)
         let fillColor = hostile ? UIColor(red: 178.0/255, green: 34.0/255, blue: 34.0/255, alpha:1) :  UIColor(red: 113.0/255, green: 202.0/255, blue: 53.0/255, alpha:1)
@@ -30,17 +31,18 @@ class HealthBar : SKSpriteNode {
             self.position = CGPoint(x: 55, y: 10)
         }
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func update(currentTime: TimeInterval, hostile: Bool, position: CGPoint, positionOffset: CGFloat){
         if (hostile == true){
             self.position.x = position.x
             self.position.y = position.y + positionOffset
         }
-        
+
     }
-    
+
 }
+
