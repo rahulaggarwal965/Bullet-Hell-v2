@@ -50,6 +50,9 @@ let Rad2Deg = 180 / Pi;
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
+    //TEST
+    var t : [soldier] = []
+    
     //Tracking Enemies
     var enemyT1Sprites: [SKSpriteNode] = [];
     var enemyT2Sprites: [SKSpriteNode] = [];
@@ -190,6 +193,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         playerHealthBar.position = CGPoint(x: 0, y: 10);
         self.addChild(playerHealthBar);
         updatePlayerHealthBar(playerHealthBar, withHealthPoints: playerHP, withMaxHP: playerMaxHealth);
+        
+        t.append(soldier(position: CGPoint(x: self.size.width/2, y: self.size.height - self.size.height/11)))
+        for soldier in t {
+            self.addChild(soldier)
+        }
+        
+        //self.addChild(HealthBar(healthBarWidth: 40, healthBarHeight: 4, hostile: true, health: 40, maxHealth : 40, position: CGPoint(x: self.size.width/2, y: self.size.height - self.size.height/11)))
     }
     
     //Physics and Contact
@@ -621,6 +631,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
         
+        for soldier in t {
+            soldier.update(currentTime: currentTime)
+        }
         
         //Enemy Health Bars
         updateEnemyHealthBarPositions();

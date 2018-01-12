@@ -22,6 +22,7 @@
 		7DFC7FD720047297000B141A /* enemyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC7FD620047297000B141A /* enemyClass.swift */; };
 		7DFC7FD9200472C0000B141A /* soldierEnemyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC7FD8200472C0000B141A /* soldierEnemyClass.swift */; };
 		7DFC7FDF2004750C000B141A /* healthBarClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC7FDE2004750C000B141A /* healthBarClass.swift */; };
+		7DFC7FE72006C4C7000B141A /* bruteEnemyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC7FE62006C4C7000B141A /* bruteEnemyClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		7DFC7FD620047297000B141A /* enemyClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enemyClass.swift; sourceTree = "<group>"; };
 		7DFC7FD8200472C0000B141A /* soldierEnemyClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = soldierEnemyClass.swift; sourceTree = "<group>"; };
 		7DFC7FDE2004750C000B141A /* healthBarClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = healthBarClass.swift; sourceTree = "<group>"; };
+		7DFC7FE62006C4C7000B141A /* bruteEnemyClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bruteEnemyClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				3F1F34951D2DC74C0042AF8F /* playerImagesv1.atlas */,
 				7DFC7FD620047297000B141A /* enemyClass.swift */,
 				7DFC7FD8200472C0000B141A /* soldierEnemyClass.swift */,
+				7DFC7FE62006C4C7000B141A /* bruteEnemyClass.swift */,
 				7DFC7FDE2004750C000B141A /* healthBarClass.swift */,
 			);
 			path = "Bullet Hell v2";
@@ -289,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DFC7FE72006C4C7000B141A /* bruteEnemyClass.swift in Sources */,
 				3F1F34621D2D875B0042AF8F /* GameScene.swift in Sources */,
 				3F1F34641D2D875B0042AF8F /* GameViewController.swift in Sources */,
 				7DFC7FDF2004750C000B141A /* healthBarClass.swift in Sources */,

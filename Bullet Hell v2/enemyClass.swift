@@ -11,8 +11,8 @@ import SpriteKit
 
 let enemyHealths : [String : Int] = ["Soldier" : 40, "Brute" : 120]
 let enemyArmors : [String : Int] = ["Soldier" : 0, "Brute" : 30]
-let enemyHealthBarWidths: [String : Int] = ["Soldier" : 40, "Brute" : 40]
-let enemyHealthBarHeights: [String : Int] = ["Soldier" : 4, "Brute" : 4]
+//let enemyHealthBarWidths: [String : Int] = ["Soldier" : 40, "Brute" : 40]
+//let enemyHealthBarHeights: [String : Int] = ["Soldier" : 4, "Brute" : 4]
 
 class Enemy : SKSpriteNode {
 
@@ -21,11 +21,11 @@ class Enemy : SKSpriteNode {
     var armor : Int;
     var healthBar : HealthBar;
 
-    init( type: String, position: CGPoint, texture : SKTexture, color: UIColor, size: CGSize){
+    init(type: String, position: CGPoint, texture : SKTexture, color: UIColor, size: CGSize){
         self.type = type;
-        self.health = enemyHealths[type]!;
-        self.armor = enemyArmors[type]!;
-        self.healthBar = HealthBar(healthBarWidth: enemyHealthBarWidths[type]!, healthBarHeight: enemyHealthBarHeights[type]!, hostile: true, health: self.health, maxHealth: self.health)
+        self.health = enemyHealths[self.type]!
+        self.armor = enemyArmors[self.type]!
+        self.healthBar = HealthBar(healthBarWidth: 40, healthBarHeight: 4, hostile: true, health: self.health, maxHealth: self.health, position: CGPoint(x: 0, y: 0))
         super.init(texture: texture, color: color, size: size)
 
         self.position = position;
@@ -33,6 +33,8 @@ class Enemy : SKSpriteNode {
         self.physicsBody?.affectedByGravity = false;
         self.physicsBody?.collisionBitMask = 0;
         self.physicsBody?.isDynamic = true;
+        
+        self.addChild(self.healthBar)
 
     }
 

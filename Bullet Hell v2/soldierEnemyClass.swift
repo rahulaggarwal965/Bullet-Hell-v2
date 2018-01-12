@@ -20,10 +20,10 @@ class soldier : Enemy {
             self.soldierAnimation.append(self.soldierAtlas.textureNamed("soldier\(i)"))
         }
 
-        super.init(type: "soldier", position: position, texture: soldierAnimation[0], color: UIColor.clear, size: soldierAnimation[0].size())
+        super.init(type: "Soldier", position: position, texture: soldierAnimation[0], color: UIColor.clear, size: soldierAnimation[0].size())
 
-        self.physicsBody?.categoryBitMask = physicsCategory.enemyT1
-        self.physicsBody?.contactTestBitMask = physicsCategory.player | physicsCategory.playerBullet
+        //self.physicsBody?.categoryBitMask = physicsCategory.enemyT1
+        //self.physicsBody?.contactTestBitMask = physicsCategory.player | physicsCategory.playerBullet
         self.run(SKAction.sequence([SKAction.moveTo(y: -self.size.height, duration: 3.0), SKAction.removeFromParent()]))
         self.run(SKAction.repeatForever(SKAction.animate(with: soldierAnimation, timePerFrame: 0.05, resize: false, restore: true)))
     }
@@ -33,7 +33,7 @@ class soldier : Enemy {
     }
 
     override func update(currentTime: TimeInterval) {
-        super.healthBar.update(currentTime: currentTime, hostile: true, position: self.position, positionOffset: 17)
+        super.healthBar.update(currentTime: currentTime, hostile: true, position: CGPoint(x: 0, y: 0), positionOffset: 37)
     }
 
 }
