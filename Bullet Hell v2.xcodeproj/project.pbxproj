@@ -23,6 +23,11 @@
 		7DFC7FD9200472C0000B141A /* soldierEnemyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC7FD8200472C0000B141A /* soldierEnemyClass.swift */; };
 		7DFC7FDF2004750C000B141A /* healthBarClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC7FDE2004750C000B141A /* healthBarClass.swift */; };
 		7DFC7FE72006C4C7000B141A /* bruteEnemyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC7FE62006C4C7000B141A /* bruteEnemyClass.swift */; };
+		7DFC7FED200C39A1000B141A /* bulletClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC7FEC200C39A1000B141A /* bulletClass.swift */; };
+		7DFC7FEF200C3C28000B141A /* playerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC7FEE200C3C28000B141A /* playerClass.swift */; };
+		7DFC7FF3200C5814000B141A /* enemyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC7FF2200C5814000B141A /* enemyFactory.swift */; };
+		7DFC7FF5200F14B3000B141A /* playerBulletClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC7FF4200F14B3000B141A /* playerBulletClass.swift */; };
+		7DFC7FF7201057A8000B141A /* bruteBulletClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC7FF6201057A8000B141A /* bruteBulletClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +70,11 @@
 		7DFC7FD8200472C0000B141A /* soldierEnemyClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = soldierEnemyClass.swift; sourceTree = "<group>"; };
 		7DFC7FDE2004750C000B141A /* healthBarClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = healthBarClass.swift; sourceTree = "<group>"; };
 		7DFC7FE62006C4C7000B141A /* bruteEnemyClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bruteEnemyClass.swift; sourceTree = "<group>"; };
+		7DFC7FEC200C39A1000B141A /* bulletClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bulletClass.swift; sourceTree = "<group>"; };
+		7DFC7FEE200C3C28000B141A /* playerClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playerClass.swift; sourceTree = "<group>"; };
+		7DFC7FF2200C5814000B141A /* enemyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enemyFactory.swift; sourceTree = "<group>"; };
+		7DFC7FF4200F14B3000B141A /* playerBulletClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playerBulletClass.swift; sourceTree = "<group>"; };
+		7DFC7FF6201057A8000B141A /* bruteBulletClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bruteBulletClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,9 +137,14 @@
 				3F1F34991D2DCAFA0042AF8F /* enemyT1Images.atlas */,
 				3F1F34951D2DC74C0042AF8F /* playerImagesv1.atlas */,
 				7DFC7FD620047297000B141A /* enemyClass.swift */,
+				7DFC7FEE200C3C28000B141A /* playerClass.swift */,
 				7DFC7FD8200472C0000B141A /* soldierEnemyClass.swift */,
 				7DFC7FE62006C4C7000B141A /* bruteEnemyClass.swift */,
 				7DFC7FDE2004750C000B141A /* healthBarClass.swift */,
+				7DFC7FEC200C39A1000B141A /* bulletClass.swift */,
+				7DFC7FF4200F14B3000B141A /* playerBulletClass.swift */,
+				7DFC7FF6201057A8000B141A /* bruteBulletClass.swift */,
+				7DFC7FF2200C5814000B141A /* enemyFactory.swift */,
 			);
 			path = "Bullet Hell v2";
 			sourceTree = "<group>";
@@ -294,10 +309,15 @@
 			files = (
 				7DFC7FE72006C4C7000B141A /* bruteEnemyClass.swift in Sources */,
 				3F1F34621D2D875B0042AF8F /* GameScene.swift in Sources */,
+				7DFC7FED200C39A1000B141A /* bulletClass.swift in Sources */,
+				7DFC7FF5200F14B3000B141A /* playerBulletClass.swift in Sources */,
+				7DFC7FF3200C5814000B141A /* enemyFactory.swift in Sources */,
+				7DFC7FF7201057A8000B141A /* bruteBulletClass.swift in Sources */,
 				3F1F34641D2D875B0042AF8F /* GameViewController.swift in Sources */,
 				7DFC7FDF2004750C000B141A /* healthBarClass.swift in Sources */,
 				3F1F345E1D2D875B0042AF8F /* AppDelegate.swift in Sources */,
 				7DFC7FD9200472C0000B141A /* soldierEnemyClass.swift in Sources */,
+				7DFC7FEF200C3C28000B141A /* playerClass.swift in Sources */,
 				7DFC7FD720047297000B141A /* enemyClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

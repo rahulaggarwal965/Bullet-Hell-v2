@@ -11,8 +11,7 @@ import SpriteKit
 
 let enemyHealths : [String : Int] = ["Soldier" : 40, "Brute" : 120]
 let enemyArmors : [String : Int] = ["Soldier" : 0, "Brute" : 30]
-//let enemyHealthBarWidths: [String : Int] = ["Soldier" : 40, "Brute" : 40]
-//let enemyHealthBarHeights: [String : Int] = ["Soldier" : 4, "Brute" : 4]
+
 
 class Enemy : SKSpriteNode {
 
@@ -20,12 +19,15 @@ class Enemy : SKSpriteNode {
     var health : Int;
     var armor : Int;
     var healthBar : HealthBar;
+    var isOffScreen : Bool = false;
+    var gameScene : SKScene
 
-    init(type: String, position: CGPoint, texture : SKTexture, color: UIColor, size: CGSize){
+    init(type: String, position: CGPoint, texture : SKTexture, color: UIColor, size: CGSize, gameScene: SKScene){
+        self.gameScene = gameScene
         self.type = type;
         self.health = enemyHealths[self.type]!
         self.armor = enemyArmors[self.type]!
-        self.healthBar = HealthBar(healthBarWidth: 40, healthBarHeight: 4, hostile: true, health: self.health, maxHealth: self.health, position: CGPoint(x: 0, y: 0))
+        self.healthBar = HealthBar(healthBarWidth: 40, healthBarHeight: 4, hostile: true, health: self.health, maxHealth: self.health)
         super.init(texture: texture, color: color, size: size)
 
         self.position = position;
@@ -37,13 +39,15 @@ class Enemy : SKSpriteNode {
         self.addChild(self.healthBar)
 
     }
+    
+    @objc func offScreen(){
+        if(self.position.y < -self.size.height/2){
+            self.isOffScreen = true
+        }
+    }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-    func update(currentTime: TimeInterval){
-
     }
 }
 
