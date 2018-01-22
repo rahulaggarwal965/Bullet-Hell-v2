@@ -11,6 +11,7 @@ import SpriteKit
 
 class BruteBullet : Bullet {
     
+    var isOffScreen : Bool = false
     var velocity : CGFloat = 30
     var vX : CGFloat = 0
     var vY : CGFloat = 0
@@ -45,6 +46,7 @@ class BruteBullet : Bullet {
         
         if (self.position.x < -self.size.width/2 || self.position.x > super.gameScene.size.width + self.size.width/2 || self.position.y < -self.size.height/2 || self.position.y > super.gameScene.size.height + self.size.height/2) {
             self.removeFromParent()
+            self.isOffScreen = true
         }
 
     }

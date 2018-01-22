@@ -18,7 +18,7 @@ class PlayerBullet : Bullet {
         self.position = position
         self.physicsBody?.categoryBitMask = physicsCategory.playerBullet
         self.physicsBody?.contactTestBitMask = physicsCategory.soldier | physicsCategory.brute
-        self.run(SKAction.sequence([SKAction.moveTo(y: gameScene.size.height + self.size.height, duration: 1.3), SKAction.removeFromParent()]))
+        self.run(SKAction.sequence([SKAction.moveTo(y: gameScene.size.height + self.size.height + self.position.y, duration: 1.3), SKAction.removeFromParent()]))
         
     }
     

@@ -11,8 +11,8 @@ import SpriteKit
 
 class HealthBar : SKSpriteNode {
     
-    var healthBarWidth : Int
-    var healthBarHeight: Int
+    var barWidth : Int
+    var barHeight: Int
     var hostile: Bool
     var maxHealth : Int
     
@@ -21,13 +21,13 @@ class HealthBar : SKSpriteNode {
     var borderColor : UIColor
     var borderRect : CGRect
 
-    init(healthBarWidth : Int, healthBarHeight : Int, hostile : Bool, health: Int, maxHealth : Int) {
-        self.healthBarWidth = healthBarWidth
-        self.healthBarHeight = healthBarHeight
+    init(barWidth : Int, barHeight : Int, hostile : Bool, health: Int, maxHealth : Int) {
+        self.barWidth = barWidth
+        self.barHeight = barHeight
         self.hostile = hostile
         self.maxHealth = maxHealth
         
-        self.barSize = CGSize(width: healthBarWidth, height: healthBarHeight)
+        self.barSize = CGSize(width: barWidth, height: barHeight)
         self.fillColor = hostile ? UIColor(red: 178.0/255, green: 34.0/255, blue: 34.0/255, alpha:1) :  UIColor(red: 113.0/255, green: 202.0/255, blue: 53.0/255, alpha:1)
         self.borderColor = UIColor(red: 35.0/255, green: 28.0/255, blue: 40.0/255, alpha:1)
         UIGraphicsBeginImageContextWithOptions(barSize, false, 0);

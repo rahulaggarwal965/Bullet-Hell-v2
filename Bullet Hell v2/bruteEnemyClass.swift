@@ -26,15 +26,13 @@ class Brute : Enemy {
         
         self.physicsBody?.categoryBitMask = physicsCategory.brute
         self.physicsBody?.contactTestBitMask = physicsCategory.player | physicsCategory.playerBullet
-        self.run(SKAction.sequence([SKAction.moveTo(y: -self.size.height, duration: 7.0), SKAction.removeFromParent(), SKAction.perform(#selector(self.offScreen), onTarget: self)]))
+        self.run(SKAction.sequence([SKAction.moveTo(y: -self.size.height, duration: 7.0), SKAction.removeFromParent(), SKAction.repeatForever(SKAction.run({
+            if (self.bruteBullets.count <= 0) {
+                super.isOffScreen = true
+            }
+        }))]))
         self.run(SKAction.repeatForever(SKAction.animate(with: bruteAnimation, timePerFrame: 0.05, resize: false, restore: true)))
         
-    }
-    
-    @objc override func offScreen(){
-        if(bruteBullets.count <= 0){
-            self.isOffScreen = true
-        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -50,7 +48,12 @@ class Brute : Enemy {
         
         for bruteBullet in bruteBullets {
             bruteBullet.update(targetPosition: playerPosition)
+            if (bruteBullet.isOffScreen == true) {
+                bruteBullets.remove(at: bruteBullets.index(of: bruteBullet)!)
+            }
         }
+        
+        print("Brute Bullets Count \(bruteBullets.count)")
         
     }
     

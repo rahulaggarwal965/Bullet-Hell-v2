@@ -46,15 +46,21 @@ class PhysicsDelegate {
         }
         
         if ((firstBody.categoryBitMask == physicsCategory.brute) && (secondBody.categoryBitMask == physicsCategory.playerBullet)) {
-            brutePlayerCollision(brute: firstBody.node as! Brute, playerBullet: secondBody.node as! PlayerBullet)
+            brutePlayerBulletCollision(brute: firstBody.node as! Brute, playerBullet: secondBody.node as! PlayerBullet)
         } else if ((firstBody.categoryBitMask == physicsCategory.playerBullet) && (secondBody.categoryBitMask == physicsCategory.brute)){
-            brutePlayerCollision(brute: secondBody.node as! Brute, playerBullet: firstBody.node as! PlayerBullet)
+            brutePlayerBulletCollision(brute: secondBody.node as! Brute, playerBullet: firstBody.node as! PlayerBullet)
         }
         
         if ((firstBody.categoryBitMask == physicsCategory.soldier) && (secondBody.categoryBitMask == physicsCategory.player)) {
             soldierPlayerCollision(soldier: firstBody.node as! Soldier, player: secondBody.node as! Player)
         } else if ((firstBody.categoryBitMask == physicsCategory.player) && (secondBody.categoryBitMask == physicsCategory.soldier)) {
             soldierPlayerCollision(soldier: secondBody.node as! Soldier, player: firstBody.node as! Player)
+        }
+        
+        if ((firstBody.categoryBitMask == physicsCategory.bruteBullet) && (secondBody.categoryBitMask == physicsCategory.player)) {
+            bruteBulletPlayerCollision(bruteBullet: firstBody.node as! BruteBullet, player: secondBody.node as! Player)
+        } else if ((firstBody.categoryBitMask == physicsCategory.player) && (secondBody.categoryBitMask == physicsCategory.bruteBullet)) {
+            bruteBulletPlayerCollision(bruteBullet: secondBody.node as! BruteBullet, player: firstBody.node as! Player)
         }
 
     }
@@ -73,7 +79,7 @@ class PhysicsDelegate {
     }
     
     //Collision of a Brute Enemy with a Player Bullet
-    func brutePlayerCollision(brute: Brute, playerBullet: PlayerBullet){
+    func brutePlayerBulletCollision(brute: Brute, playerBullet: PlayerBullet){
         brute.health -= 20 //something
         brute.healthBar.update(health: brute.health)
         playerBullet.removeFromParent()
@@ -97,7 +103,9 @@ class PhysicsDelegate {
         }
     }
     
-    
+    func bruteBulletPlayerCollision(bruteBullet: BruteBullet, player: Player) {
+        
+    }
     
     
     

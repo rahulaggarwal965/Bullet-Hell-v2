@@ -24,7 +24,7 @@ class Soldier : Enemy {
 
         self.physicsBody?.categoryBitMask = physicsCategory.soldier
         self.physicsBody?.contactTestBitMask = physicsCategory.player | physicsCategory.playerBullet
-        self.run(SKAction.sequence([SKAction.moveTo(y: -self.size.height, duration: 3.0), SKAction.removeFromParent(), SKAction.perform(#selector(super.offScreen), onTarget: self)]))
+        self.run(SKAction.sequence([SKAction.moveTo(y: -self.size.height, duration: 3.0), SKAction.removeFromParent(), SKAction]))
         self.run(SKAction.repeatForever(SKAction.animate(with: soldierAnimation, timePerFrame: 0.05, resize: false, restore: true)))
     }
 

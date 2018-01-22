@@ -14,7 +14,7 @@ let enemyArmors : [String : Int] = ["Soldier" : 0, "Brute" : 30]
 
 
 class Enemy : SKSpriteNode {
-
+    
     var type : String;
     var health : Int;
     var armor : Int;
@@ -28,7 +28,7 @@ class Enemy : SKSpriteNode {
         self.type = type;
         self.health = enemyHealths[self.type]!
         self.armor = enemyArmors[self.type]!
-        self.healthBar = HealthBar(healthBarWidth: 40, healthBarHeight: 4, hostile: true, health: self.health, maxHealth: self.health)
+        self.healthBar = HealthBar(barWidth: 40, barHeight: 4, hostile: true, health: self.health, maxHealth: self.health)
         super.init(texture: texture, color: color, size: size)
 
         self.position = position;
@@ -41,8 +41,8 @@ class Enemy : SKSpriteNode {
 
     }
     
-    @objc func offScreen(){
-            self.isOffScreen = true
+    @objc func offScreen() {
+        self.isOffScreen = true
     }
 
     required init?(coder aDecoder: NSCoder) {

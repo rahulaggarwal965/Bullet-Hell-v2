@@ -27,7 +27,7 @@ class Player : SKSpriteNode {
             self.playerAnimation.append(self.playerAtlas.textureNamed("spaceShip\(i)"))
         }
         
-        self.healthBar = HealthBar(healthBarWidth: 100, healthBarHeight: 10, hostile: false, health: self.health, maxHealth: self.health)
+        self.healthBar = HealthBar(barWidth: 100, barHeight: 10, hostile: false, health: self.health, maxHealth: self.health)
         
         super.init(texture: playerAnimation[0], color: UIColor.clear, size: playerAnimation[0].size())
         
