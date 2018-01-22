@@ -13,7 +13,7 @@ class PlayerBullet : Bullet {
 
     init(position: CGPoint, gameScene: SKScene){
         
-        super.init(texture: SKTexture(imageNamed: "playerBulletv2.png"), damage: 30, gameScene: gameScene)
+        super.init(texture: SKTexture(imageNamed: "playerBulletv2.png"), damage: 12, gameScene: gameScene)
         
         self.position = position
         self.physicsBody?.categoryBitMask = physicsCategory.playerBullet

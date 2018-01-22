@@ -15,21 +15,8 @@ var player : Player!
 //EnemyFactory
 var enemyFactory : EnemyFactory!
 
-//PHYSICS
-struct physicsCategory {
-    
-    //Enemies
-    static let soldier : UInt32 = 1;
-    static let brute : UInt32 = 2;
-    
-    //Bullets
-    static let playerBullet : UInt32 = 3;
-    static let bruteBullet: UInt32 = 5;
-    
-    //Player
-    static let player : UInt32 = 4;
-    
-}
+//Physics Delegate
+var physicsDelegate : PhysicsDelegate = PhysicsDelegate()
 
 //Math
 let Pi = CGFloat.pi;
@@ -146,7 +133,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         stars2_2.alpha = 0.12;
         addChild(stars2_2);
         
-        player = Player(position: CGPoint(x: self.size.width/2, y: self.size.height/7), gameScene: self)
+        player = Player(position: CGPoint(x: self.size.width/2, y: self.size.height/7), gameScene: self, health: 100, armor: 0)
         self.addChild(player)
         
         enemyFactory = EnemyFactory(gameScene: self);
@@ -155,14 +142,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //Physics and Contact
     func didBegin(_ contact: SKPhysicsContact) {
         
-        //Designating First Body and Second Body
-        let firstBody : SKPhysicsBody = contact.bodyA;
-        let secondBody : SKPhysicsBody = contact.bodyB;
+        physicsDelegate.didBegin(contact: contact)
         
-        //Make sure contact nodes still exist
-        if((firstBody.node?.parent == nil) || (secondBody.node?.parent == nil)){
-            return;
-        }
+//        //Designating First Body and Second Body
+//        let firstBody : SKPhysicsBody = contact.bodyA;
+//        let secondBody : SKPhysicsBody = contact.bodyB;
+//
+//        //Make sure contact nodes still exist
+//        if((firstBody.node?.parent == nil) || (secondBody.node?.parent == nil)){
+//            return;
+//        }
         
         //Enemy - Type One Collision with Player Bullet
 //        if ((firstBody.categoryBitMask == physicsCategory.enemyT1) && (secondBody.categoryBitMask == physicsCategory.playerBullet)) {

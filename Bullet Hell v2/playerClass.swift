@@ -15,15 +15,19 @@ class Player : SKSpriteNode {
     var playerAnimation : [SKTexture] = [SKTexture]()
     var healthBar : HealthBar
     var gameScene : SKScene
+    var health : Int
+    var armor : Int
     
-    init(position: CGPoint, gameScene: SKScene){
+    init(position: CGPoint, gameScene: SKScene, health: Int, armor: Int){
         
+        self.health = health
+        self.armor = armor
         self.gameScene = gameScene
         for i in 1 ... self.playerAtlas.textureNames.count {
             self.playerAnimation.append(self.playerAtlas.textureNamed("spaceShip\(i)"))
         }
         
-        self.healthBar = HealthBar(healthBarWidth: 100, healthBarHeight: 10, hostile: false, health: 100, maxHealth: 100)
+        self.healthBar = HealthBar(healthBarWidth: 100, healthBarHeight: 10, hostile: false, health: self.health, maxHealth: self.health)
         
         super.init(texture: playerAnimation[0], color: UIColor.clear, size: playerAnimation[0].size())
         
@@ -43,7 +47,9 @@ class Player : SKSpriteNode {
     }
     
     @objc func spawnBullets(){
-        self.gameScene.addChild(PlayerBullet(position: self.position, gameScene: self.gameScene))
+        if (self.health > 0) {
+            self.gameScene.addChild(PlayerBullet(position: self.position, gameScene: self.gameScene))
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {

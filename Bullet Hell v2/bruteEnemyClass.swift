@@ -32,7 +32,7 @@ class Brute : Enemy {
     }
     
     @objc override func offScreen(){
-        if(self.position.y < -self.size.height/2 && bruteBullets.count <= 0){
+        if(bruteBullets.count <= 0){
             self.isOffScreen = true
         }
     }

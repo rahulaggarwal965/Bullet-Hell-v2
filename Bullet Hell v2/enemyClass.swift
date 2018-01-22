@@ -20,6 +20,7 @@ class Enemy : SKSpriteNode {
     var armor : Int;
     var healthBar : HealthBar;
     var isOffScreen : Bool = false;
+    var isDestroyed : Bool = false;
     var gameScene : SKScene
 
     init(type: String, position: CGPoint, texture : SKTexture, color: UIColor, size: CGSize, gameScene: SKScene){
@@ -41,9 +42,7 @@ class Enemy : SKSpriteNode {
     }
     
     @objc func offScreen(){
-        if(self.position.y < -self.size.height/2){
             self.isOffScreen = true
-        }
     }
 
     required init?(coder aDecoder: NSCoder) {

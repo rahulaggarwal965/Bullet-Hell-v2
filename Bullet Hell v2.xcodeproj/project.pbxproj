@@ -28,6 +28,7 @@
 		7DFC7FF3200C5814000B141A /* enemyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC7FF2200C5814000B141A /* enemyFactory.swift */; };
 		7DFC7FF5200F14B3000B141A /* playerBulletClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC7FF4200F14B3000B141A /* playerBulletClass.swift */; };
 		7DFC7FF7201057A8000B141A /* bruteBulletClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC7FF6201057A8000B141A /* bruteBulletClass.swift */; };
+		7DFC7FF92012F932000B141A /* physicsDelegateClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC7FF82012F932000B141A /* physicsDelegateClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		7DFC7FF2200C5814000B141A /* enemyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enemyFactory.swift; sourceTree = "<group>"; };
 		7DFC7FF4200F14B3000B141A /* playerBulletClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playerBulletClass.swift; sourceTree = "<group>"; };
 		7DFC7FF6201057A8000B141A /* bruteBulletClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bruteBulletClass.swift; sourceTree = "<group>"; };
+		7DFC7FF82012F932000B141A /* physicsDelegateClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = physicsDelegateClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				7DFC7FF4200F14B3000B141A /* playerBulletClass.swift */,
 				7DFC7FF6201057A8000B141A /* bruteBulletClass.swift */,
 				7DFC7FF2200C5814000B141A /* enemyFactory.swift */,
+				7DFC7FF82012F932000B141A /* physicsDelegateClass.swift */,
 			);
 			path = "Bullet Hell v2";
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				7DFC7FED200C39A1000B141A /* bulletClass.swift in Sources */,
 				7DFC7FF5200F14B3000B141A /* playerBulletClass.swift in Sources */,
 				7DFC7FF3200C5814000B141A /* enemyFactory.swift in Sources */,
+				7DFC7FF92012F932000B141A /* physicsDelegateClass.swift in Sources */,
 				7DFC7FF7201057A8000B141A /* bruteBulletClass.swift in Sources */,
 				3F1F34641D2D875B0042AF8F /* GameViewController.swift in Sources */,
 				7DFC7FDF2004750C000B141A /* healthBarClass.swift in Sources */,
