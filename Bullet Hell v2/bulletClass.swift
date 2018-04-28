@@ -25,7 +25,7 @@ class Bullet : SKSpriteNode {
         self.physicsBody = SKPhysicsBody(rectangleOf: self.size)
         self.physicsBody?.collisionBitMask = 0;
         self.physicsBody?.affectedByGravity = false;
-        self.physicsBody?.isDynamic = false;
+        self.physicsBody?.isDynamic = true;
         
     }
     

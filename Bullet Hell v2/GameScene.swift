@@ -19,7 +19,7 @@ var player : Player!
 var enemyFactory : EnemyFactory!
 
 //Physics Delegate
-var physicsDelegate : PhysicsDelegate = PhysicsDelegate()
+var physicsDelegate : PhysicsDelegate!
 
 //Math
 let Pi = CGFloat.pi;
@@ -28,7 +28,7 @@ let Rad2Deg = 180 / Pi;
 
 //Random Function
 func random(low: Int, high: Int) -> Int {
-    return Int(arc4random_uniform(UInt32(high - low))) + low
+    return Int(arc4random_uniform(UInt32(high + 1 - low))) + low
 }
 
 //Sign Function
@@ -58,6 +58,11 @@ func distanceTowards(_ x: CGFloat, y: CGFloat, x1: CGFloat, y1: CGFloat) -> CGFl
     return distance;
 }
 
+//Map Function
+func map(val: CGFloat, low1: CGFloat, high1: CGFloat, low2: CGFloat, high2: CGFloat) -> CGFloat{
+    return (val - low1) / (high1 - low1) * (high2 - low2) + low2
+}
+
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func didMove(to view: SKView) {
@@ -65,8 +70,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //VERY IMPORTANT FOR PHYSICS TO WORK
         physicsWorld.contactDelegate = self;
-        
+    
         world = World(gameScene: self)
+        
+        physicsDelegate = PhysicsDelegate(gameScene: self)
         
         player = Player(position: CGPoint(x: self.size.width/2, y: self.size.height/7), gameScene: self, health: 100, armor: 0)
         self.addChild(player)
@@ -200,7 +207,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for touch in touches {
             let location = touch.location(in: self);
             
-            player.update(location: location)
+            player.onTouch(location: location)
         }
     }
     
@@ -210,7 +217,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for touch in touches {
             let location = touch.location(in: self);
         
-            player.update(location: location)
+            player.onTouch(location: location)
         }
     }
    
@@ -220,7 +227,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         /* Called before each frame is rendered */
         
         world.update()
-        
+        player.update(currentTime: currentTime)
         enemyFactory.update(currentTime: currentTime, playerPosition: player.position)
     
     }

@@ -15,6 +15,7 @@ class Brute : Enemy {
     var bruteAnimation : [SKTexture] = [SKTexture]()
     var bruteBulletCooldown : CFTimeInterval = 0
     var bruteBullets : [BruteBullet] = []
+    var isDestroyed : Bool = false;
     
     init(position: CGPoint, gameScene: SKScene) {
         
@@ -26,11 +27,7 @@ class Brute : Enemy {
         
         self.physicsBody?.categoryBitMask = physicsCategory.brute
         self.physicsBody?.contactTestBitMask = physicsCategory.player | physicsCategory.playerBullet
-        self.run(SKAction.sequence([SKAction.moveTo(y: -self.size.height, duration: 7.0), SKAction.removeFromParent(), SKAction.repeatForever(SKAction.run({
-            if (self.bruteBullets.count <= 0) {
-                super.isOffScreen = true
-            }
-        }))]))
+        self.run(SKAction.sequence([SKAction.moveTo(y: -self.size.height, duration: 7.0), SKAction.removeFromParent()]))
         self.run(SKAction.repeatForever(SKAction.animate(with: bruteAnimation, timePerFrame: 0.05, resize: false, restore: true)))
         
     }
@@ -40,7 +37,12 @@ class Brute : Enemy {
     }
     
     func update(currentTime: TimeInterval, playerPosition: CGPoint) {
-        if (currentTime - bruteBulletCooldown >= 3){
+        
+        if((self.position.y < -self.size.height/2 || self.isDestroyed == true) && bruteBullets.count <= 0){
+            self.isRemoved = true
+        }
+        
+        if (currentTime - bruteBulletCooldown >= 3 && self.isDestroyed != true){
             bruteBullets.append(BruteBullet(position: self.position, gameScene: super.gameScene))
             super.gameScene.addChild(bruteBullets.last!)
             self.bruteBulletCooldown = currentTime
@@ -48,12 +50,10 @@ class Brute : Enemy {
         
         for bruteBullet in bruteBullets {
             bruteBullet.update(targetPosition: playerPosition)
-            if (bruteBullet.isOffScreen == true) {
+            if (bruteBullet.isRemoved == true) {
                 bruteBullets.remove(at: bruteBullets.index(of: bruteBullet)!)
             }
         }
-        
-        print("Brute Bullets Count \(bruteBullets.count)")
         
     }
     

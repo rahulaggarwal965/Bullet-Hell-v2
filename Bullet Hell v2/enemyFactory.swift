@@ -35,19 +35,17 @@ class EnemyFactory {
 
     func update(currentTime: TimeInterval, playerPosition: CGPoint) {
         
-        print("Brutes \(brutes.count)")
-        
         for soldier in soldiers {
-            if(soldier.isOffScreen == true || soldier.isDestroyed  == true){
+            soldier.update()
+            if(soldier.isRemoved  == true){
                 soldiers.remove(at: soldiers.index(of: soldier)!)
             }
         }
         
         for brute in brutes {
             brute.update(currentTime: currentTime, playerPosition: playerPosition)
-            if(brute.isOffScreen == true || brute.isDestroyed == true){
+            if(brute.isRemoved == true){
                 brutes.remove(at: brutes.index(of: brute)!)
-                print("removed")
             }
         }
         

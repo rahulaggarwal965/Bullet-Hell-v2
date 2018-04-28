@@ -19,6 +19,13 @@
 		3F1F34961D2DC74C0042AF8F /* playerImagesv1.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F34951D2DC74C0042AF8F /* playerImagesv1.atlas */; };
 		3F1F349A1D2DCAFA0042AF8F /* enemyT1Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F34991D2DCAFA0042AF8F /* enemyT1Images.atlas */; };
 		47AEF31B1D2F4689005E0280 /* enemyT2Images.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 47AEF31A1D2F4689005E0280 /* enemyT2Images.atlas */; };
+		7D1D48E3201EC90C00490AA2 /* barClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1D48E2201EC90C00490AA2 /* barClass.swift */; };
+		7D2C85162071CB310006A6A9 /* playerWaveBulletClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C85152071CB310006A6A9 /* playerWaveBulletClass.swift */; };
+		7D2C85182071D0140006A6A9 /* playerOrbitalsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C85172071D0140006A6A9 /* playerOrbitalsClass.swift */; };
+		7D2C851A2072B4790006A6A9 /* playerNormalBulletClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C85192072B4790006A6A9 /* playerNormalBulletClass.swift */; };
+		7D2C851C2072C0C80006A6A9 /* playerHomingBulletClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C851B2072C0C80006A6A9 /* playerHomingBulletClass.swift */; };
+		7DCF910C20309DF200801B1D /* powerUpClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCF910B20309DF200801B1D /* powerUpClass.swift */; };
+		7DCF91102030A18900801B1D /* powerUps.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7DCF910F2030A18800801B1D /* powerUps.atlas */; };
 		7DFC7FD720047297000B141A /* enemyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC7FD620047297000B141A /* enemyClass.swift */; };
 		7DFC7FD9200472C0000B141A /* soldierEnemyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC7FD8200472C0000B141A /* soldierEnemyClass.swift */; };
 		7DFC7FDF2004750C000B141A /* healthBarClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC7FDE2004750C000B141A /* healthBarClass.swift */; };
@@ -30,7 +37,6 @@
 		7DFC7FF7201057A8000B141A /* bruteBulletClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC7FF6201057A8000B141A /* bruteBulletClass.swift */; };
 		7DFC7FF92012F932000B141A /* physicsDelegateClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC7FF82012F932000B141A /* physicsDelegateClass.swift */; };
 		7DFC7FFB20157400000B141A /* worldClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC7FFA20157400000B141A /* worldClass.swift */; };
-		7DFC7FFD20157BDF000B141A /* armorBarClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC7FFC20157BDF000B141A /* armorBarClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +75,13 @@
 		3F1F34951D2DC74C0042AF8F /* playerImagesv1.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = playerImagesv1.atlas; sourceTree = "<group>"; };
 		3F1F34991D2DCAFA0042AF8F /* enemyT1Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = enemyT1Images.atlas; sourceTree = "<group>"; };
 		47AEF31A1D2F4689005E0280 /* enemyT2Images.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = enemyT2Images.atlas; sourceTree = "<group>"; };
+		7D1D48E2201EC90C00490AA2 /* barClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barClass.swift; sourceTree = "<group>"; };
+		7D2C85152071CB310006A6A9 /* playerWaveBulletClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playerWaveBulletClass.swift; sourceTree = "<group>"; };
+		7D2C85172071D0140006A6A9 /* playerOrbitalsClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playerOrbitalsClass.swift; sourceTree = "<group>"; };
+		7D2C85192072B4790006A6A9 /* playerNormalBulletClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playerNormalBulletClass.swift; sourceTree = "<group>"; };
+		7D2C851B2072C0C80006A6A9 /* playerHomingBulletClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playerHomingBulletClass.swift; sourceTree = "<group>"; };
+		7DCF910B20309DF200801B1D /* powerUpClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = powerUpClass.swift; sourceTree = "<group>"; };
+		7DCF910F2030A18800801B1D /* powerUps.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = powerUps.atlas; sourceTree = "<group>"; };
 		7DFC7FD620047297000B141A /* enemyClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enemyClass.swift; sourceTree = "<group>"; };
 		7DFC7FD8200472C0000B141A /* soldierEnemyClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = soldierEnemyClass.swift; sourceTree = "<group>"; };
 		7DFC7FDE2004750C000B141A /* healthBarClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = healthBarClass.swift; sourceTree = "<group>"; };
@@ -80,7 +93,6 @@
 		7DFC7FF6201057A8000B141A /* bruteBulletClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bruteBulletClass.swift; sourceTree = "<group>"; };
 		7DFC7FF82012F932000B141A /* physicsDelegateClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = physicsDelegateClass.swift; sourceTree = "<group>"; };
 		7DFC7FFA20157400000B141A /* worldClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = worldClass.swift; sourceTree = "<group>"; };
-		7DFC7FFC20157BDF000B141A /* armorBarClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = armorBarClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,14 +154,20 @@
 				47AEF31A1D2F4689005E0280 /* enemyT2Images.atlas */,
 				3F1F34991D2DCAFA0042AF8F /* enemyT1Images.atlas */,
 				3F1F34951D2DC74C0042AF8F /* playerImagesv1.atlas */,
+				7DCF910F2030A18800801B1D /* powerUps.atlas */,
 				7DFC7FD620047297000B141A /* enemyClass.swift */,
 				7DFC7FEE200C3C28000B141A /* playerClass.swift */,
 				7DFC7FD8200472C0000B141A /* soldierEnemyClass.swift */,
 				7DFC7FE62006C4C7000B141A /* bruteEnemyClass.swift */,
 				7DFC7FDE2004750C000B141A /* healthBarClass.swift */,
-				7DFC7FFC20157BDF000B141A /* armorBarClass.swift */,
+				7D1D48E2201EC90C00490AA2 /* barClass.swift */,
+				7DCF910B20309DF200801B1D /* powerUpClass.swift */,
 				7DFC7FEC200C39A1000B141A /* bulletClass.swift */,
 				7DFC7FF4200F14B3000B141A /* playerBulletClass.swift */,
+				7D2C85152071CB310006A6A9 /* playerWaveBulletClass.swift */,
+				7D2C851B2072C0C80006A6A9 /* playerHomingBulletClass.swift */,
+				7D2C85192072B4790006A6A9 /* playerNormalBulletClass.swift */,
+				7D2C85172071D0140006A6A9 /* playerOrbitalsClass.swift */,
 				7DFC7FF6201057A8000B141A /* bruteBulletClass.swift */,
 				7DFC7FF2200C5814000B141A /* enemyFactory.swift */,
 				7DFC7FF82012F932000B141A /* physicsDelegateClass.swift */,
@@ -255,6 +273,7 @@
 					};
 					3F1F347C1D2D875B0042AF8F = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = SUPYGAPUR8;
 						LastSwiftMigration = 0920;
 						TestTargetID = 3F1F34591D2D875B0042AF8F;
 					};
@@ -291,6 +310,7 @@
 				3F1F34691D2D875B0042AF8F /* Assets.xcassets in Resources */,
 				3F1F34671D2D875B0042AF8F /* Main.storyboard in Resources */,
 				3F1F34961D2DC74C0042AF8F /* playerImagesv1.atlas in Resources */,
+				7DCF91102030A18900801B1D /* powerUps.atlas in Resources */,
 				47AEF31B1D2F4689005E0280 /* enemyT2Images.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,14 +340,19 @@
 				3F1F34621D2D875B0042AF8F /* GameScene.swift in Sources */,
 				7DFC7FED200C39A1000B141A /* bulletClass.swift in Sources */,
 				7DFC7FF5200F14B3000B141A /* playerBulletClass.swift in Sources */,
+				7D1D48E3201EC90C00490AA2 /* barClass.swift in Sources */,
 				7DFC7FF3200C5814000B141A /* enemyFactory.swift in Sources */,
 				7DFC7FF92012F932000B141A /* physicsDelegateClass.swift in Sources */,
-				7DFC7FFD20157BDF000B141A /* armorBarClass.swift in Sources */,
 				7DFC7FF7201057A8000B141A /* bruteBulletClass.swift in Sources */,
+				7D2C851A2072B4790006A6A9 /* playerNormalBulletClass.swift in Sources */,
+				7D2C851C2072C0C80006A6A9 /* playerHomingBulletClass.swift in Sources */,
 				3F1F34641D2D875B0042AF8F /* GameViewController.swift in Sources */,
 				7DFC7FDF2004750C000B141A /* healthBarClass.swift in Sources */,
 				3F1F345E1D2D875B0042AF8F /* AppDelegate.swift in Sources */,
 				7DFC7FD9200472C0000B141A /* soldierEnemyClass.swift in Sources */,
+				7DCF910C20309DF200801B1D /* powerUpClass.swift in Sources */,
+				7D2C85182071D0140006A6A9 /* playerOrbitalsClass.swift in Sources */,
+				7D2C85162071CB310006A6A9 /* playerWaveBulletClass.swift in Sources */,
 				7DFC7FFB20157400000B141A /* worldClass.swift in Sources */,
 				7DFC7FEF200C3C28000B141A /* playerClass.swift in Sources */,
 				7DFC7FD720047297000B141A /* enemyClass.swift in Sources */,
@@ -552,6 +577,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = SUPYGAPUR8;
 				INFOPLIST_FILE = "Bullet Hell v2UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rahul.Bullet-Hell-v2UITests";
@@ -565,6 +591,7 @@
 		3F1F348E1D2D875B0042AF8F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = SUPYGAPUR8;
 				INFOPLIST_FILE = "Bullet Hell v2UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rahul.Bullet-Hell-v2UITests";

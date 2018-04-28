@@ -22,12 +22,17 @@ struct physicsCategory {
     //Player
     static let player : UInt32 = 4;
     
+    //Power Ups
+    static let powerUp : UInt32 = 6;
+    
 }
 
 class PhysicsDelegate {
     
-    init(){
-        
+    var gameScene : SKScene
+    
+    init(gameScene: SKScene){
+        self.gameScene = gameScene
     }
     
     func didBegin(contact: SKPhysicsContact) {
@@ -62,6 +67,12 @@ class PhysicsDelegate {
         } else if ((firstBody.categoryBitMask == physicsCategory.player) && (secondBody.categoryBitMask == physicsCategory.bruteBullet)) {
             bruteBulletPlayerCollision(bruteBullet: secondBody.node as! BruteBullet, player: firstBody.node as! Player)
         }
+        
+        if ((firstBody.categoryBitMask == physicsCategory.powerUp) && (secondBody.categoryBitMask == physicsCategory.player)) {
+            powerUpPlayerCollision(powerUp: firstBody.node as! PowerUp, player: secondBody.node as! Player)
+        } else if ((firstBody.categoryBitMask == physicsCategory.player) && (secondBody.categoryBitMask == physicsCategory.powerUp)) {
+            powerUpPlayerCollision(powerUp: secondBody.node as! PowerUp, player: firstBody.node as! Player)
+        }
 
     }
     
@@ -74,7 +85,10 @@ class PhysicsDelegate {
             soldier.health = 0
             soldier.removeFromParent()
             soldier.healthBar.removeFromParent()
-            soldier.isDestroyed = true;
+            soldier.isRemoved = true;
+            if (random(low: 1, high: 3) == 1){
+                self.gameScene.addChild(PowerUp(position: soldier.position, type: random(low: 1, high: 3)))
+            }
         }
     }
     
@@ -87,8 +101,9 @@ class PhysicsDelegate {
             brute.health = 0
             brute.removeFromParent()
             brute.healthBar.removeFromParent()
-            if (brute.bruteBullets.count <= 0){
-                brute.isDestroyed = true
+            brute.isDestroyed = true
+            if (random(low: 1, high: 3) == 1){
+                self.gameScene.addChild(PowerUp(position: brute.position, type: random(low: 1, high: 3)))
             }
         }
     }
@@ -104,7 +119,20 @@ class PhysicsDelegate {
     }
     
     func bruteBulletPlayerCollision(bruteBullet: BruteBullet, player: Player) {
-        
+        player.health -= bruteBullet.damage
+        player.healthBar.update(health: player.health)
+        bruteBullet.removeFromParent()
+        bruteBullet.isRemoved = true;
+        if (player.health <= 0) {
+            player.health = 0
+            player.removeFromParent()
+            //TO DO GAME OVER
+        }
+    }
+    
+    func powerUpPlayerCollision(powerUp: PowerUp, player: Player) {
+        player.powerUpType = powerUp.type;
+        powerUp.removeFromParent()
     }
     
     
